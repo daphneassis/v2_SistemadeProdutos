@@ -4,15 +4,15 @@ import Pessoas.Administrador;
 
 import java.util.Scanner;
 
-public class MenuLoginAdm {
+public class AdmLogin {
 
     private Scanner sc;
 
      Administrador administrador;
-    public MenuLoginAdm(Scanner sc){
+    public AdmLogin(Scanner sc){
         this.sc=sc;}
 
-       public Administrador menuLoginAdm() {
+       public Administrador loginAdm() {
            System.out.println("-------Login Administrador---------");
            System.out.print("Digite o login:");
            String loginAdm = sc.next();

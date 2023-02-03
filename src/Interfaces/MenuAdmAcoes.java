@@ -2,8 +2,12 @@ package Interfaces;
 
 public interface MenuAdmAcoes {
 
-void cadastrarProdutos();
-void editarProdutos();
-void removerProdutos();
+    void visualizarProdutos();
+
+    void cadastrarProdutos();
+
+    void editarProdutos();
+
+    void removerProdutos();
 
 }

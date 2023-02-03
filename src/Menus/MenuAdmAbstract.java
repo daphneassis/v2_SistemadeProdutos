@@ -3,7 +3,6 @@ package Menus;
 import Enums.EnumCategoria;
 import Enums.EnumSecoesMercado;
 import Interfaces.MenuAdmAcoes;
-import Interfaces.VisualizarProdutos;
 import Produtos.Informatica;
 import Produtos.Livro;
 import Produtos.Mercado;
@@ -16,7 +15,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
-public abstract class MenuAdmAbstract implements MenuAdmAcoes, VisualizarProdutos {
+public abstract class MenuAdmAbstract implements MenuAdmAcoes {
     private static Scanner sc;
     List <ProdutoAbstrato> listaProdutos= new ArrayList<>();
     private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -115,7 +114,7 @@ public abstract class MenuAdmAbstract implements MenuAdmAcoes, VisualizarProduto
     }
 
     @Override
-    public  void removerProdutos() {
+    public void removerProdutos() {
         System.out.println("Digite o nome do produto que deseja deletar: ");
         String nomeExcluido = sc.next();
         boolean aux1 = true;
@@ -135,7 +134,7 @@ public abstract class MenuAdmAbstract implements MenuAdmAcoes, VisualizarProduto
     }
 
     @Override
-    public  void visualizarProdutos() {
+    public void visualizarProdutos() {
         for (ProdutoAbstrato produtoNaLista : listaProdutos) {
             System.out.println(produtoNaLista);
         }
