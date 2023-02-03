@@ -1,16 +1,24 @@
 package Menus;
 
-import java.util.Scanner;
+import Enums.EnumCategoria;
+import Produtos.ProdutoAbstrato;
 
-public class MenuClienteClasseConcreta extends MenuClienteAbstract {
+import java.util.*;
+
+import static Menus.MenuAdmClasseConcreta.visualizarProdutos;
+
+public class MenuClienteClasseConcreta {
+
+    private static MenuClienteAbstract menuCliente;
+    private static Scanner sc;
+    private static List<ProdutoAbstrato> listaProdutos = new ArrayList<>();
 
 
-    public MenuClienteClasseConcreta(Scanner sc) {
-        super(sc);
-    }
+    public MenuClienteClasseConcreta(Scanner sc){
+        this.sc=sc;
+}
 
-    public static void menuCliente(Scanner sc) {
-        MenuClienteAbstract menuCliente=null;
+    public static void menuCliente() {
         int opcaoMenuCliente;
         System.out.println("-------Menu Cliente ------: ");
         System.out.println("1 - Visualizar lista de produtos");
@@ -26,20 +34,88 @@ public class MenuClienteClasseConcreta extends MenuClienteAbstract {
                 System.out.println("Saindo do Menu Cliente");
                 break;
             case 1:
-                menuCliente.visualizarProdutos();
+                visualizarProdutos();
                 break;
             case 2:
-                menuCliente.filtrarPorCategoria();
+              filtrarPorCategoria();
                 break;
             case 3:
-                menuCliente.filtrarPorMarca();
+               filtrarPorMarca();
                 break;
             case 4:
-                menuCliente.ordenarPorNome();
+               ordenarPorNome();
                 break;
             case 5:
-                menuCliente.ordenarPorPreco();
+               ordenarPorPreco();
                 break;
+        }
+    }
+    public static void filtrarPorCategoria() {
+        System.out.println("Filtrar pela categoria: (m)Mercado/(l)Livro/(i)Informática");
+        char opcaoFiltroPorCategoria = sc.next().charAt(0);
+        if (opcaoFiltroPorCategoria == 'm') {
+            for (ProdutoAbstrato produto : listaProdutos) {
+                if (produto.getCategoria().equals(EnumCategoria.MERCADO)) {
+                    System.out.println(produto);
+                }
+            }
+        }
+        if (opcaoFiltroPorCategoria == 'l') {
+            for (ProdutoAbstrato produto : listaProdutos) {
+                if (produto.getCategoria().equals(EnumCategoria.LIVRO)) {
+                    System.out.println(produto);
+                }
+            }
+        }
+        if (opcaoFiltroPorCategoria == 'i') {
+            for (ProdutoAbstrato produto : listaProdutos) {
+                if (produto.getCategoria().equals(EnumCategoria.INFORMATICA)) {
+                    System.out.println(produto);
+                }
+            }
+        }
+    }
+    public static void filtrarPorMarca() {
+        System.out.println("Digite a marca:");
+        String opcaoFiltrarPorMarca = sc.next();
+        for (ProdutoAbstrato produto : listaProdutos) {
+            if (produto.getMarca().equals(opcaoFiltrarPorMarca)) {
+                System.out.println(produto);
+            }
+        }
+    }
+
+    public static void ordenarPorNome() {
+        System.out.println("Ordenar a lista por nome na ordem crescente ou descrescente?(c/d)");
+        char opcaoOrdemNome = sc.next().charAt(0);
+        if (opcaoOrdemNome == 'c') {
+            Collections.sort(listaProdutos);
+            for (ProdutoAbstrato produto : listaProdutos) {
+                System.out.println(produto);
+            }
+        }
+        if (opcaoOrdemNome == 'd') {
+            Collections.reverse(listaProdutos);
+            for (ProdutoAbstrato produto : listaProdutos) {
+                System.out.println(produto);
+            }
+        }
+    }
+
+    public static void ordenarPorPreco() {
+        System.out.println("Ordenar a lista por preço na ordem crescente ou descrescente?(c/d)");
+        char opcaoOrdemPreco = sc.next().charAt(0);
+        if (opcaoOrdemPreco == 'c') {
+            Collections.sort(listaProdutos, Comparator.comparing(ProdutoAbstrato::getPreco));
+            for (ProdutoAbstrato produto : listaProdutos) {
+                System.out.println(produto);
+            }
+        }
+        if (opcaoOrdemPreco == 'd') {
+            Collections.reverse(listaProdutos);
+            for (ProdutoAbstrato produto : listaProdutos) {
+                System.out.println(produto);
+            }
         }
     }
 

@@ -6,7 +6,7 @@ import Produtos.ProdutoAbstrato;
 
 import java.util.*;
 
-public class MenuClienteAbstract implements MenuClienteAcoes {
+public class MenuClienteAbstract {
 
     private static Scanner sc;
 
@@ -22,7 +22,7 @@ public class MenuClienteAbstract implements MenuClienteAcoes {
         }
     }
 
-    @Override
+    /*@Override
     public void filtrarPorCategoria() {
         System.out.println("Filtrar pela categoria: (m)Mercado/(l)Livro/(i)Informática");
         char opcaoFiltroPorCategoria = sc.next().charAt(0);
@@ -95,6 +95,6 @@ public class MenuClienteAbstract implements MenuClienteAcoes {
             }
         }
     }
-
+*/
 
 }

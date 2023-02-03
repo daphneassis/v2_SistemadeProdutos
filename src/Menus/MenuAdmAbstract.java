@@ -17,14 +17,15 @@ import java.util.Scanner;
 
 public abstract class MenuAdmAbstract implements MenuAdmAcoes {
     private static Scanner sc;
-    List <ProdutoAbstrato> listaProdutos= new ArrayList<>();
+    private static List<ProdutoAbstrato> listaProdutos = new ArrayList<>();
     private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-    public MenuAdmAbstract(Scanner sc){
-        this.sc=sc;
+
+    public MenuAdmAbstract(Scanner sc) {
+        this.sc = sc;
     }
 
-    @Override
-    public  void cadastrarProdutos() {
+   /* @Override
+    public void cadastrarProdutos() {
         System.out.print("Digite o nome do produto: ");
         String nomeProduto = sc.next();
         System.out.print("Digite o preço do produto: ");
@@ -66,7 +67,6 @@ public abstract class MenuAdmAbstract implements MenuAdmAcoes {
             System.out.println("Produto adicionado");
         }
     }
-
     @Override
     public  void editarProdutos() {
         System.out.println("Digite o nome do produto que deseja editar: ");
@@ -112,7 +112,6 @@ public abstract class MenuAdmAbstract implements MenuAdmAcoes {
             System.out.println("Produto não encontrado");
         }
     }
-
     @Override
     public void removerProdutos() {
         System.out.println("Digite o nome do produto que deseja deletar: ");
@@ -132,11 +131,10 @@ public abstract class MenuAdmAbstract implements MenuAdmAcoes {
         }
 
     }
-
     @Override
-    public void visualizarProdutos() {
+    public  void visualizarProdutos() {
         for (ProdutoAbstrato produtoNaLista : listaProdutos) {
             System.out.println(produtoNaLista);
-        }
+        }  */
+
     }
-}
