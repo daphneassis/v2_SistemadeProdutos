@@ -16,15 +16,22 @@ import java.util.List;
 import java.util.Scanner;
 
 public abstract class MenuAdmAbstract implements MenuAdmAcoes {
-    private static Scanner sc;
-    private static List<ProdutoAbstrato> listaProdutos = new ArrayList<>();
-    private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    protected Scanner sc;
+    private  List<ProdutoAbstrato> listaProdutos = new ArrayList<>();
+    private  SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
     public MenuAdmAbstract(Scanner sc) {
         this.sc = sc;
     }
 
-   /* @Override
+    @Override
+    public void visualizarProdutos() {
+        for (ProdutoAbstrato produtoNaLista : listaProdutos) {
+            System.out.println(produtoNaLista);
+        }
+    }
+
+    @Override
     public void cadastrarProdutos() {
         System.out.print("Digite o nome do produto: ");
         String nomeProduto = sc.next();
@@ -66,9 +73,11 @@ public abstract class MenuAdmAbstract implements MenuAdmAcoes {
             listaProdutos.add(new Informatica(nomeProduto, precoProduto, marcaProduto, EnumCategoria.INFORMATICA, nomeSoftware, tamanhoMemoria));
             System.out.println("Produto adicionado");
         }
+
     }
+
     @Override
-    public  void editarProdutos() {
+    public void editarProdutos() {
         System.out.println("Digite o nome do produto que deseja editar: ");
         String nome = sc.next();
         boolean aux = true;
@@ -111,7 +120,9 @@ public abstract class MenuAdmAbstract implements MenuAdmAcoes {
         if (aux == false) {
             System.out.println("Produto não encontrado");
         }
+
     }
+
     @Override
     public void removerProdutos() {
         System.out.println("Digite o nome do produto que deseja deletar: ");
@@ -129,12 +140,6 @@ public abstract class MenuAdmAbstract implements MenuAdmAcoes {
         if (aux1 == true) {
             System.out.println("Produto não encontrado!");
         }
-
     }
-    @Override
-    public  void visualizarProdutos() {
-        for (ProdutoAbstrato produtoNaLista : listaProdutos) {
-            System.out.println(produtoNaLista);
-        }  */
 
-    }
+}

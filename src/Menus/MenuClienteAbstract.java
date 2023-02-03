@@ -1,14 +1,15 @@
 package Menus;
 
 import Enums.EnumCategoria;
+import Interfaces.MenuAdmAcoes;
 import Interfaces.MenuClienteAcoes;
 import Produtos.ProdutoAbstrato;
 
 import java.util.*;
 
-public class MenuClienteAbstract {
+public abstract class MenuClienteAbstract implements MenuClienteAcoes  {
 
-    private static Scanner sc;
+    protected static Scanner sc;
 
     List<ProdutoAbstrato> listaProdutos = new ArrayList<>();
 
@@ -16,13 +17,14 @@ public class MenuClienteAbstract {
         this.sc = sc;
     }
 
+    @Override
     public void visualizarProdutos() {
         for (ProdutoAbstrato produto : listaProdutos) {
             System.out.println(produto);
         }
     }
 
-    /*@Override
+    @Override
     public void filtrarPorCategoria() {
         System.out.println("Filtrar pela categoria: (m)Mercado/(l)Livro/(i)Informática");
         char opcaoFiltroPorCategoria = sc.next().charAt(0);
@@ -94,7 +96,8 @@ public class MenuClienteAbstract {
                 System.out.println(produto);
             }
         }
+
     }
-*/
+
 
 }
