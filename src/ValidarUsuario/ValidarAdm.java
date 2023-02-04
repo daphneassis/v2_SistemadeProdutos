@@ -9,7 +9,7 @@ public class ValidarAdm {
             System.out.println("Login de administrador realizado com sucesso!");
             return true;
         } else {
-            System.out.println("Login ou senha inválidas");
+            System.out.println("Login ou senha inválidos");
             return false;
         }
     }

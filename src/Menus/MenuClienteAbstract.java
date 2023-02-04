@@ -27,9 +27,11 @@ public abstract class MenuClienteAbstract implements MenuClienteAcoes  {
     public void filtrarPorCategoria() {
         System.out.println("Filtrar pela categoria: (m)Mercado/(l)Livro/(i)Informática");
         char opcaoFiltroPorCategoria = sc.next().charAt(0);
+        boolean aux = true;
         if (opcaoFiltroPorCategoria == 'm') {
             for (ProdutoAbstrato produto : listaProdutos) {
                 if (produto.getCategoria().equals(EnumCategoria.MERCADO)) {
+                    aux = false;
                     System.out.println(produto);
                 }
             }
@@ -37,6 +39,7 @@ public abstract class MenuClienteAbstract implements MenuClienteAcoes  {
         if (opcaoFiltroPorCategoria == 'l') {
             for (ProdutoAbstrato produto : listaProdutos) {
                 if (produto.getCategoria().equals(EnumCategoria.LIVRO)) {
+                    aux = false;
                     System.out.println(produto);
                 }
             }
@@ -44,9 +47,13 @@ public abstract class MenuClienteAbstract implements MenuClienteAcoes  {
         if (opcaoFiltroPorCategoria == 'i') {
             for (ProdutoAbstrato produto : listaProdutos) {
                 if (produto.getCategoria().equals(EnumCategoria.INFORMATICA)) {
+                    aux = false;
                     System.out.println(produto);
                 }
             }
+        }
+        if(aux == true){
+            System.out.println("Categoria inexistente!");
         }
     }
 
@@ -54,10 +61,15 @@ public abstract class MenuClienteAbstract implements MenuClienteAcoes  {
     public void filtrarPorMarca() {
         System.out.println("Digite a marca:");
         String opcaoFiltrarPorMarca = sc.next();
+        boolean aux = true;
         for (ProdutoAbstrato produto : listaProdutos) {
             if (produto.getMarca().equals(opcaoFiltrarPorMarca)) {
+                aux = false;
                 System.out.println(produto);
             }
+        }
+        if(aux == true){
+            System.out.println("Marca não registrada!");
         }
     }
 

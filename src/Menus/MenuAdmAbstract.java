@@ -56,7 +56,7 @@ public abstract class MenuAdmAbstract implements MenuAdmAcoes {
             }
             EnumSecoesMercado secaoEscolhida = EnumSecoesMercado.escolhaSecaoMercado(sc.nextInt());
             listaProdutos.add(new Mercado(nomeProduto, precoProduto, marcaProduto, EnumCategoria.MERCADO, dataValidade, secaoEscolhida));
-            System.out.print("Produto adicionado");
+            System.out.println("Produto adicionado");
 
         } else if (ch == 'l') {
             System.out.print("Digite a editora: ");
@@ -85,7 +85,6 @@ public abstract class MenuAdmAbstract implements MenuAdmAcoes {
         for (ProdutoAbstrato cadaProduto : listaProdutos) {
             if (cadaProduto.getNome().equals(nome)) {
                 aux = false;
-                System.out.println("Produto encontrado");
                 System.out.println("O que deseja editar?(Nome(n)/Preço(p)/Marca(m)/Categoria(c):");
                 char edicaoProduto = sc.next().charAt(0);
                 if (edicaoProduto == 'n') {
@@ -118,8 +117,8 @@ public abstract class MenuAdmAbstract implements MenuAdmAcoes {
                 break;
             }
         }
-        if (aux == false) {
-            System.out.println("Produto não encontrado");
+        if (aux == true) {
+            System.out.println("Produto não encontrado!");
         }
     }
 
@@ -133,7 +132,7 @@ public abstract class MenuAdmAbstract implements MenuAdmAcoes {
                 aux1 = false;
                 System.out.println(c);
                 listaProdutos.remove(c);
-                System.out.println("Produto encontrado e deletado!");
+                System.out.println("Produto deletado!");
                 break;
             }
         }
