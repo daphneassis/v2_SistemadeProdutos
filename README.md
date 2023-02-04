@@ -27,8 +27,12 @@ se o objeto pertence à parte de higiene, frios, grãos, bebidas e hortifruti do
 A opção "editar Produto" é feita pelo nome do produto podendo ser modificado: nome, preço, marca e categoria. A opção remover produto também é feita pelo nome.
 Comportamentos próprios de cada classe serão trabalhados no Menu nas próximas entregas.
 
+-------------------------------------------------------
+
 In English:
+
 Important: Product inventory control with Administrator already set with login: "lol", password: "123".
+
 #Program Description:
 Initial Menu where you can:
 (a)login as Administrator to register, view, edit and remove products.
