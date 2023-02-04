@@ -1,6 +1,6 @@
 # v2_SistemadeProdutos
 
-Controle de estoque de produtos com Administrador já setado com o login: "lol", senha:"123".
+Importante: Controle de estoque de produtos com Administrador já setado com o login: "lol", senha:"123".
 
 
 #Descrição do Programa:
