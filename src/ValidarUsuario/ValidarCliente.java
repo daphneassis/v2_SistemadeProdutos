@@ -1,17 +1,8 @@
 package ValidarUsuario;
 
-import Pessoas.Administrador;
 import Pessoas.Cliente;
 
-import java.util.Scanner;
-
 public class ValidarCliente {
-    private Scanner sc;
-    private Cliente cliente;
-
-    ValidarCliente(Scanner sc){
-        this.sc= this.sc;
-    }
 
     public static boolean validaClienteLoginSenha(Cliente cliente, Cliente cliente2){
         if(cliente.getLogin().equals(cliente2.getLogin())&&cliente.getSenha().equals(cliente2.getSenha())){
