@@ -1,6 +1,10 @@
 # v2_SistemadeProdutos
 Sistema de Produtos POO2_2 versao
+
+
 Controle de estoque de produtos com Administrador já setado com o login: "lol", senha:"123".
+
+
 Menu Inicial onde é possível:
 (a)fazer o login como Administrador para cadastrar, visualizar, editar e remover produtos.
 (b)fazer o cadastro do Cliente de primeiro acesso e, em seguida, o login com os dados cadastrados. 
