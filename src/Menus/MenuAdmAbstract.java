@@ -17,11 +17,12 @@ import java.util.Scanner;
 
 public abstract class MenuAdmAbstract implements MenuAdmAcoes {
     protected Scanner sc;
-    private  List<ProdutoAbstrato> listaProdutos = new ArrayList<>();
+    protected  List<ProdutoAbstrato> listaProdutos = new ArrayList<>();
     private  SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-    public MenuAdmAbstract(Scanner sc) {
+    public MenuAdmAbstract(Scanner sc, List <ProdutoAbstrato> listaProdutos) {
         this.sc = sc;
+        this.listaProdutos=listaProdutos;
     }
 
     @Override
@@ -120,7 +121,6 @@ public abstract class MenuAdmAbstract implements MenuAdmAcoes {
         if (aux == false) {
             System.out.println("Produto não encontrado");
         }
-
     }
 
     @Override
@@ -142,4 +142,11 @@ public abstract class MenuAdmAbstract implements MenuAdmAcoes {
         }
     }
 
+    public List<ProdutoAbstrato> getListaProdutos() {
+        return listaProdutos;
+    }
+
+    public void setListaProdutos(List<ProdutoAbstrato> listaProdutos) {
+        this.listaProdutos = listaProdutos;
+    }
 }

@@ -1,7 +1,6 @@
 package Menus;
 
 import Enums.EnumCategoria;
-import Interfaces.MenuAdmAcoes;
 import Interfaces.MenuClienteAcoes;
 import Produtos.ProdutoAbstrato;
 
@@ -11,9 +10,10 @@ public abstract class MenuClienteAbstract implements MenuClienteAcoes  {
 
     protected static Scanner sc;
 
-    List<ProdutoAbstrato> listaProdutos = new ArrayList<>();
+    protected List<ProdutoAbstrato> listaProdutos = new ArrayList<>();
 
-    public MenuClienteAbstract(Scanner sc) {
+    public MenuClienteAbstract(Scanner sc, List<ProdutoAbstrato> listaProdutos) {
+        this.listaProdutos=listaProdutos;
         this.sc = sc;
     }
 
@@ -23,7 +23,6 @@ public abstract class MenuClienteAbstract implements MenuClienteAcoes  {
             System.out.println(produto);
         }
     }
-
     @Override
     public void filtrarPorCategoria() {
         System.out.println("Filtrar pela categoria: (m)Mercado/(l)Livro/(i)Informática");
@@ -99,5 +98,11 @@ public abstract class MenuClienteAbstract implements MenuClienteAcoes  {
 
     }
 
+    public List<ProdutoAbstrato> getListaProdutos() {
+        return listaProdutos;
+    }
 
+    public void setListaProdutos(List<ProdutoAbstrato> listaProdutos) {
+        this.listaProdutos = listaProdutos;
+    }
 }

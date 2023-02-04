@@ -1,16 +1,18 @@
 package Menus;
 
+import Produtos.ProdutoAbstrato;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class MenuAdmClasseConcreta extends MenuAdmAbstract {
 
-    public MenuAdmClasseConcreta(Scanner sc) {
-        super(sc);
+    public MenuAdmClasseConcreta(Scanner sc, List<ProdutoAbstrato> listaProdutos) {
+        super(sc, listaProdutos);
     }
 
     public  void menuAdministrador() {
         int opcaoMenuAdm;
-
         do {
             System.out.println("-----Menu Administrador ------: ");
             System.out.println("1 - Cadastrar produto");
@@ -39,8 +41,4 @@ public class MenuAdmClasseConcreta extends MenuAdmAbstract {
             }
         }while(opcaoMenuAdm!=0);
     }
-
-
-
-
 }
